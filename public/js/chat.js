@@ -12,7 +12,6 @@ const messtemp = document.querySelector('#message-temp').innerHTML
 const locamess = document.querySelector('#message-location').innerHTML
 const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
 
-//Options for to enter in the chat like username and room
 const {username,room} = Qs.parse(location.search,{ignoreQueryPrefix :true})
 
 
@@ -20,18 +19,16 @@ const autoscroll = () => {
   // New message element
   const $newMessage = $message.lastElementChild
 
-  // Height of the new message
+ 
   const newMessageStyles = getComputedStyle($newMessage)
   const newMessageMargin = parseInt(newMessageStyles.marginBottom)
   const newMessageHeight = $newMessage.offsetHeight + newMessageMargin
 
-  // Visible height
+ 
   const visibleHeight = $message.offsetHeight
 
-  // Height of messages container
   const containerHeight = $message.scrollHeight
 
-  // How far have I scrolled?
   const scrollOffset = $message.scrollTop + visibleHeight
 
   if (containerHeight - newMessageHeight <= scrollOffset) {
@@ -49,7 +46,7 @@ const autoscroll = () => {
 //   socket.emit('increment') // it transfer the data to server
 // })
 
-// socket.on('Message',(con)=> it was previously used thing
+// socket.on('Message',(con)=> 
 // {
 //   console.log(con)
 //  // socket.emit('well')
@@ -63,7 +60,7 @@ socket.on('Message',(con)=>
 })
 
 $messageform.addEventListener('submit',(e) =>{
-  e.preventDefault() // it default refresh the page
+  e.preventDefault() 
 
   $messageformbutton.setAttribute('disabled','disabled')
   // const message = document.querySelector('input').value
